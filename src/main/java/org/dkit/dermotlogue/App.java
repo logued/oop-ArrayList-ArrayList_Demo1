@@ -28,7 +28,7 @@ public class App {
         System.out.println("ArrayList Samples");
         demoArrayListOfString();
         demoPrimitiveTypeWrapping();
-        demoArrayListGrowth();
+        //demoArrayListGrowth();
     }
 
     private void demoArrayListOfString() {
@@ -79,10 +79,16 @@ public class App {
             System.out.println(s);
         }
 
+
+        //TODO Use a for loop to print the namesList in reverse order.
+        System.out.println("Reverse order:");
+        for (int i = namesList.size()-1; i>=0; i--) {
+            System.out.println(i + ": " + namesList.get(i));
+        }
         // clear all contents
         namesList.clear();
 
-        //TODO Use a for loop to print the namesList in reverse order.
+
     }
 
     private void demoPrimitiveTypeWrapping() {
