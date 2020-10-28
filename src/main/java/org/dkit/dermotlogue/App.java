@@ -123,6 +123,27 @@ public class App {
         // Populate the ArrayList with 10 heights, print them out,
         // using a loop, calculate the average height and output it.
 
+        ArrayList<Double> heights = new ArrayList<>();
+        heights.add(1.75);
+        heights.add(1.80);
+        heights.add(1.45);
+        heights.add(1.98);
+        System.out.println("Display all heights:");
+        for (Double height:heights)
+        {
+            System.out.println(height);
+        }
+
+        double totalHeight = 0;
+        for (Double height:heights)
+        {
+            totalHeight += height;
+        }
+        double averageHeight = totalHeight/heights.size();
+        System.out.println("Average height = " + averageHeight);
+
+
+
     }
 
     private void demoArrayListGrowth() {
