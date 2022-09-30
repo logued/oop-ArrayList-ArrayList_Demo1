@@ -9,7 +9,7 @@ import java.util.Scanner;
  * KEY CONCEPTS:
  * - ArrayList is a wrapper class for an array, so data is stored
  *   in an array inside the ArrayList object
- * - ArayList can expand as required when elements are added
+ * - ArrayList can expand as required when elements are added
  * - ArrayList access is fast (because of underlying array data structure)
  * -  ArrayList stores class types only , so
  *    (NOT primitive types (which must be wrapped))
@@ -93,7 +93,7 @@ public class App {
 
     private void demoPrimitiveTypeWrapping() {
         // only class types can be stored in an ArrayList
-        // Primitive Types (int, double,...) can be stored directly
+        // Primitive Types (int, double,...) can not be stored directly
         // but they can be wrapped in their corresponding Class type
         // int ==> Integer
         // double ==> Double  etc...
