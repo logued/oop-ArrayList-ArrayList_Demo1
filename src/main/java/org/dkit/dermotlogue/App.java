@@ -11,7 +11,7 @@ import java.util.Scanner;
  *   in an array inside the ArrayList object
  * - ArrayList can expand as required when elements are added
  * - ArrayList access is fast (because of underlying array data structure)
- * -  ArrayList stores class types only , so
+ * -  ArrayLists can store class types only,
  *    (NOT primitive types (which must be wrapped))
  * - ArrayList has many useful methods (e.g. add() , remove(),  get() ...)
  * - passing ArrayList into a method
@@ -74,11 +74,10 @@ public class App {
 
         // convert ArrayList to array
         String[] namesArray = new String[namesList.size()];  // create right-sized array
-        namesList.toArray(namesArray);
+        namesList.toArray(namesArray);  // copy ArrayList elements into the Array
         for (String s : namesArray) {
             System.out.println(s);
         }
-
 
         //TODO Use a for loop to print the namesList in reverse order.
         System.out.println("Reverse order:");
@@ -88,31 +87,29 @@ public class App {
         // clear all contents
         namesList.clear();
 
-
     }
 
     private void demoPrimitiveTypeWrapping() {
         // only class types can be stored in an ArrayList
         // Primitive Types (int, double,...) can not be stored directly
-        // but they can be wrapped in their corresponding Class type
+        // but, they can be wrapped in their corresponding Class type
         // int ==> Integer
         // double ==> Double  etc...
         // Byte, Boolean, Character, Double, Float, Integer, Long, Short
 
-
-        // this line will not compile - it uses a Primitive Type int
+        // The following line will not compile - as it uses a Primitive Type int
         // ArrayList<int> intList = new ArrayList<>();
 
-        // use the corresponding Integer wrapper class instead
+        // Use the corresponding Integer wrapper class instead
         ArrayList<Integer> numList = new ArrayList<>();
         numList.add(20);
         numList.add(30);
         numList.add(40);
 
-        // The primitive int values above are converted into Integer objects.
+        // The primitive int values (20,30,40) above are converted into Integer objects automatically.
         // This is called AutoBoxing.
         // When we extract the values from the ArrayList, and assign them
-        // to an int variable, they will be converted from Integer to int automatically)
+        // to an int variable, they will be converted from Integer to int automatically.
 
         Integer refToInteger = numList.get(0);    // get reference to Integer object
         int x = refToInteger; // AutoBoxing - converts Integer to int
@@ -141,19 +138,16 @@ public class App {
         }
         double averageHeight = totalHeight/heights.size();
         System.out.println("Average height = " + averageHeight);
-
-
-
     }
 
     private void demoArrayListGrowth() {
-        // Read unknown number of floating point (double) values
+        // Read an unknown number of floating point (double) values
         // from the keyboard and store them.
         // Must use wrapper class for declaration.
 
         ArrayList<Double> values = new ArrayList<>();  //Declare & Create
 
-        // Read inputs from keyboard. ADD to ArrayList.
+        // Read inputs from keyboard. Add to ArrayList.
         // Much easier than using an array - WHY?
 
         System.out.println("Please enter values, Q to quit:");
@@ -192,7 +186,10 @@ public class App {
         // TODO  Convert to method markLargest() -
 
 
-        // Remove all numbers < 0 from ArrayList - Attempt!
+        // Remove all numbers < 0 from ArrayList
+        // Caution: when an element is removed, elements to the right are
+        // shifted to the left, to fill the space.  However, if we increment i;
+        // then we will skip past the element that filled the space.
 
         System.out.println("Remove all negative numbers from ArrayList");
         // Note that this code will fail (logically) in some cases
@@ -205,9 +202,9 @@ public class App {
 
         System.out.println("\nDisplay all using toString() " + values.toString());
         System.out.println();
-        //TEST TEST TEST.....How would you modify so the removal works?
+        //TEST TEST TEST.....How would you modify so the removal works correctly.
         //TODO  Modify so it works correctly!
-        //TODO  Convert to method removeAllNegative()
+        //TODO  Convert to a new method called removeAllNegative()
     }
 
     // Passing an ArrayList<Type> to a method really means that
