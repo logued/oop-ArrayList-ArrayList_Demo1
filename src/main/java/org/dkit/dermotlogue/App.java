@@ -7,15 +7,15 @@ import java.util.Scanner;
  * ArrayList_Demo1
  * Demonstrates basic uses of ArrayList
  * KEY CONCEPTS:
- * - ArrayList is a wrapper class for an array, so data is stored
- *   in an array inside the ArrayList object
+ * - ArrayList is a wrapper class for an array of elements, so data is stored
+ *   in an array 'inside' the ArrayList object
  * - ArrayList can expand as required when elements are added
  * - ArrayList access is fast (because of underlying array data structure)
- * -  ArrayLists can store class types only,
- *    (NOT primitive types (which must be wrapped))
- * - ArrayList has many useful methods (e.g. add() , remove(),  get() ...)
+ * -  ArrayLists can store class types only (NOT primitive types like int, double)
+ * - Primitive Type values must be Wrapped in corresponding classes Integer, Double etc.
+ * - ArrayList API has many useful methods (e.g. add() , remove(),  get() ...)
  * - passing ArrayList into a method
- * - AUtoBoxing and Primitive Data Type conversions (int => Integer etc)
+ * - AutoBoxing and Primitive Data Type conversions (int => Integer etc)
  */
 public class App {
 
@@ -97,7 +97,7 @@ public class App {
         // double ==> Double  etc...
         // Byte, Boolean, Character, Double, Float, Integer, Long, Short
 
-        // The following line will not compile - as it uses a Primitive Type int
+        // The following line will not compile - as it attempts to use a Primitive Type int
         // ArrayList<int> intList = new ArrayList<>();
 
         // Use the corresponding Integer wrapper class instead
@@ -126,13 +126,13 @@ public class App {
         heights.add(1.45);
         heights.add(1.98);
         System.out.println("Display all heights:");
-        for (Double height:heights)
+        for (Double height : heights)
         {
             System.out.println(height);
         }
 
         double totalHeight = 0;
-        for (Double height:heights)
+        for (Double height : heights)
         {
             totalHeight += height;
         }
@@ -165,8 +165,8 @@ public class App {
         // TODO Convert to method findLargest() - return largest value.  Change to use enhanced FOR
 
         // Find the largest value
-        double largest = values.get(0);  // set initial current largest
-        for (int i = 1; i < values.size(); i++) {
+        double largest = values.get(0);  // use first element as initial current largest
+        for (int i = 1; i < values.size(); i++) {  // look through list to find a larger value
             if (values.get(i) > largest) {
                 largest = values.get(i);
             }
@@ -174,10 +174,10 @@ public class App {
         System.out.println("Largest: " + largest);
 
         // Print all values, marking the largest
-        for (double element : values)    // enhanced for loop (or "for each" loop)
+        for (double d : values)    // enhanced for loop (or "for each" loop) // autobox happens
         {
-            System.out.print(element);
-            if (element == largest) {
+            System.out.print(d);
+            if (d == largest) {
                 System.out.print(" <== largest value");
             }
             System.out.println();
