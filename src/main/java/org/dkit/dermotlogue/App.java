@@ -8,11 +8,11 @@ import java.util.Scanner;
  * Demonstrates basic uses of ArrayList
  * KEY CONCEPTS:
  * - ArrayList is a wrapper class for an array of elements, so data is stored
- *   in an array 'inside' the ArrayList object
+ *   in an array data structure  'inside' the ArrayList object.
  * - ArrayList can expand as required when elements are added
  * - ArrayList access is fast (because of underlying array data structure)
- * -  ArrayLists can store class types only (NOT primitive types like int, double)
- * - Primitive Type values must be Wrapped in corresponding classes Integer, Double etc.
+ * - ArrayLists can store class types only (NOT primitive types like int, double)
+ * - so, Primitive Type values must be Wrapped in corresponding classes Integer, Double etc.
  * - ArrayList API has many useful methods (e.g. add() , remove(),  get() ...)
  * - passing ArrayList into a method
  * - AutoBoxing and Primitive Data Type conversions (int => Integer etc)
@@ -90,7 +90,7 @@ public class App {
     }
 
     private void demoPrimitiveTypeWrapping() {
-        // only class types can be stored in an ArrayList
+        // Only class types can be stored in an ArrayList.
         // Primitive Types (int, double,...) can not be stored directly
         // but, they can be wrapped in their corresponding Class type
         // int ==> Integer
